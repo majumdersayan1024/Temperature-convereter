@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> <u>Temperature Converter </u> </h1>
+  <div class="wrapper"> 
+    
+
+      <div class="container"></br>
+        
+           
+        
+          <br>
+          <label for="celsius"> <b>Celsius </b></label>
+          <input type="number" id="celsius" oninput= "celToFar()">
+      </div>
+      <div class="container"></br>
+
+
+
+
+
+
+
+        <br>
+        
+
+          <label for="fahrenheit"> <b> Fahrenheit </b></label>
+          <input type="number" id="fahrenheit" oninput = "farToCel()">
+      </div>
+      <div class="clear"><br>
+        <br>
+        <br>
+        <br>
+        <button onclick="clearfunction()"> Clear </button>
+      
+      </div>
+  </div>
+  <script src="script.js"></script>
+</div>
+<footer>
+  <p> <b>&copy; 2023 Temperature-Converter | All rights reserved.</b> </p>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 40%;
+}
+body{
+    background-color: cornsilk;
+}
+
+button{
+    right: 30vw;
+}
+.wrapper{
+    width: 450px;
+    background-color: #3dddc8;
+    padding: 70px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    box-shadow: 0.5rem 0.5rem 20px 25px rgba(0,0,0,0.25);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+.container{
+    width: 45%;
+}
+input{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #d2d2d2;
+    outline: none;
+    margin-top: 8px;
+    padding: 0 10px;
+}
+input:focus{
+    border-color: #3164ff;
+}
+  
+    footer{
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+let celsius = document.getElementById("celsius");
+let fahrenheit = document.getElementById("fahrenheit");
+function celToFar(){
+    let output = ( parseFloat(celsius.value) * 9/5 ) + 32;
+    fahrenheit.value = parseFloat(output.toFixed(2));
+}
+function farToCel(){
+    let output = ( parseFloat(fahrenheit.value) - 32) * 5/9;
+    celsius.value = parseFloat( output.toFixed(2));
+    console.log(output);
+}
+function clearfunction(){
+    celsius.value = "";
+    fahrenheit.value = "";
+}
